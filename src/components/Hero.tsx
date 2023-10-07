@@ -2,7 +2,7 @@ import { useState, MouseEventHandler } from "react";
 export default function Hero() {
   let [checker, setChecker] = useState(1);
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-    setChecker(Number(e.target.id));
+    setChecker(Number(e.currentTarget.id));
   };
   console.log(checker);
   return (
