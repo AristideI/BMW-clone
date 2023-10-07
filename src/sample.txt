@@ -1,0 +1,4 @@
+Videos: blob:https://www.fuelforlife.bmw-motorrad.com/d180ac33-d844-4d94-b38f-1537c5c814d3
+
+loop, autoplay
+mutet="muted"
