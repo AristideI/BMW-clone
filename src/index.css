@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.strokes {
+  -webkit-text-stroke: 4px white;
+  color: transparent;
+}
