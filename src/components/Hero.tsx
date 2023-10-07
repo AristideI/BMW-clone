@@ -2,11 +2,11 @@ import { useState, MouseEventHandler } from "react";
 export default function Hero() {
   let [checker, setChecker] = useState(1);
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-    console.log(e.target);
+    setChecker(Number(e.target.id));
   };
-  console.log(checker, setChecker);
+  console.log(checker);
   return (
-    <header className="relative text-white px-10">
+    <header className="relative text-white px-10 bg-black bg-opacity-30 h-screen">
       <nav className="flex justify-between border-b-2 border-white py-5">
         <section className="flex items-center gap-20">
           <button className="flex items-center gap-4">
@@ -29,70 +29,75 @@ export default function Hero() {
       <section className="grid place-content-center pt-20">
         <p className="font-bold text-[10rem] strokes">FUEL FOR LIFE</p>
       </section>
-      <article className="bg-[#e6e6e6]">
+      <article className="bg-[#e6e6e6] mx-12 mt-16">
         <section className="flex justify-between gap-2  p-1">
           <button
             className="bg-gray-700 w-1/5 py-2 grid place-content-center"
             style={{
               backgroundColor: checker === 1 ? "transparent" : "#a8a8a9",
+              color: checker === 1 ? "black" : "white",
             }}
             id="1"
             onClick={handleClick}
           >
-            <div className="flex items-center font-bold text-lg gap-2">
-              <p>All</p>
+            <div id="1" className="flex items-center font-bold text-lg gap-2">
+              <p id="1">All</p>
             </div>
           </button>
           <button
             className="bg-gray-700 w-1/5 py-2 grid place-content-center"
             style={{
               backgroundColor: checker === 2 ? "transparent" : "#a8a8a9",
+              color: checker === 2 ? "black" : "white",
             }}
             id="2"
             onClick={handleClick}
           >
-            <div className="flex items-center font-bold text-lg gap-2">
-              <img className="w-6" src="/images/location.png" alt="" />
-              <p>Rental</p>
+            <div id="2" className="flex items-center font-bold text-lg gap-2">
+              <img id="2" className="w-6" src="/images/location.png" alt="" />
+              <p id="2">Rental</p>
             </div>
           </button>
           <button
             className="bg-gray-700 w-1/5 py-2 grid place-content-center"
             style={{
               backgroundColor: checker === 3 ? "transparent" : "#a8a8a9",
+              color: checker === 3 ? "black" : "white",
             }}
             id="3"
             onClick={handleClick}
           >
-            <div className="flex items-center font-bold text-lg gap-2">
-              <img className="w-6" src="/images/street.png" alt="" />
-              <p>Travel</p>
+            <div id="3" className="flex items-center font-bold text-lg gap-2">
+              <img id="3" className="w-6" src="/images/street.png" alt="" />
+              <p id="3">Travel</p>
             </div>
           </button>
           <button
             className="bg-gray-700 w-1/5 py-2 grid place-content-center"
             style={{
               backgroundColor: checker === 4 ? "transparent" : "#a8a8a9",
+              color: checker === 4 ? "black" : "white",
             }}
             id="4"
             onClick={handleClick}
           >
-            <div className="flex items-center font-bold text-lg gap-2">
-              <img className="w-6" src="/images/racing.png" alt="" />
-              <p>Training</p>
+            <div id="4" className="flex items-center font-bold text-lg gap-2">
+              <img id="4" className="w-6" src="/images/racing.png" alt="" />
+              <p id="4">Training</p>
             </div>
           </button>
           <button
             className="bg-gray-700 w-1/5 py-2 grid place-content-center"
             style={{
               backgroundColor: checker === 5 ? "transparent" : "#a8a8a9",
+              color: checker === 5 ? "black" : "white",
             }}
             id="5"
             onClick={handleClick}
           >
-            <div className="flex items-center font-bold text-lg gap-2">
-              <img className="w-6" src="/images/route.png" alt="" />
-              <p>Routes</p>
+            <div id="5" className="flex items-center font-bold text-lg gap-2">
+              <img id="5" className="w-6" src="/images/route.png" alt="" />
+              <p id="5">Routes</p>
             </div>
           </button>
         </section>
@@ -113,5 +118,39 @@ interface CheckersProps {
   num: number;
 }
 function Checkers({ num }: CheckersProps) {
-  return <div>{num}</div>;
+  return num === 1 || num === 3 || num === 5 ? (
+    <section className="py-8 px-20">
+      <form className="flex justify-between items-center">
+        <input
+          className="border-2 border-black w-2/5 py-2 px-4"
+          placeholder="PERIOD"
+          type="text"
+        />
+        <button className="bg-black font-bold text-xl px-8 py-2">SEARCH</button>
+      </form>
+    </section>
+  ) : num === 2 || num === 4 ? (
+    <section className="py-8 px-20">
+      <form className="flex justify-between items-center gap-4">
+        <input
+          className="border-2 border-black w-1/5 py-2 px-4"
+          placeholder="PERIOD"
+          type="text"
+        />
+        <input
+          className="border-2 border-black w-2/5 py-2 px-4 text-black"
+          placeholder="Date"
+          type="date"
+        />
+        <input
+          className="border-2 border-black w-2/5 py-2 px-4"
+          placeholder="Location"
+          type="text"
+        />
+        <button className="bg-black font-bold text-xl px-8 py-2">SEARCH</button>
+      </form>
+    </section>
+  ) : (
+    <div></div>
+  );
 }
