@@ -5,3 +5,7 @@
   -webkit-text-stroke: 4px white;
   color: transparent;
 }
+.fuel {
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+}
