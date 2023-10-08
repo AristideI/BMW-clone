@@ -54,7 +54,16 @@ export default function Hero() {
             onClick={handleClick}
           >
             <div id="2" className="flex items-center font-bold text-lg gap-2">
-              <img id="2" className="w-6" src="/images/location.png" alt="" />
+              <img
+                id="2"
+                className="w-6"
+                src={
+                  checker === 2
+                    ? "/images/locations.png"
+                    : "/images/location.png"
+                }
+                alt=""
+              />
               <p id="2">Rental</p>
             </div>
           </button>
@@ -68,7 +77,14 @@ export default function Hero() {
             onClick={handleClick}
           >
             <div id="3" className="flex items-center font-bold text-lg gap-2">
-              <img id="3" className="w-6" src="/images/street.png" alt="" />
+              <img
+                id="3"
+                className="w-6"
+                src={
+                  checker === 3 ? "/images/streets.png" : "/images/street.png"
+                }
+                alt=""
+              />
               <p id="3">Travel</p>
             </div>
           </button>
@@ -82,7 +98,12 @@ export default function Hero() {
             onClick={handleClick}
           >
             <div id="4" className="flex items-center font-bold text-lg gap-2">
-              <img id="4" className="w-6" src="/images/racing.png" alt="" />
+              <img
+                id="4"
+                className="w-6"
+                src={checker === 4 ? "/images/racin.png" : "/images/racing.png"}
+                alt=""
+              />
               <p id="4">Training</p>
             </div>
           </button>
@@ -96,7 +117,12 @@ export default function Hero() {
             onClick={handleClick}
           >
             <div id="5" className="flex items-center font-bold text-lg gap-2">
-              <img id="5" className="w-6" src="/images/route.png" alt="" />
+              <img
+                id="5"
+                className="w-6"
+                src={checker === 5 ? "/images/routes.png" : "/images/route.png"}
+                alt=""
+              />
               <p id="5">Routes</p>
             </div>
           </button>
